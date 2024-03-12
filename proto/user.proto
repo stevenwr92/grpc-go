@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./proto";
+
+
+service AddServiceUsers {
+    rpc GetAllUser(Empty) returns(ResponseGetAllUser);
+    rpc CreateUser(CreateUserDto) returns (ResponseCreateUserDto);
+    rpc UpdateUser(UpdateUserDto) returns (ResponseUpdateUserDto);
+    rpc DeleteUser(DeleteUserDto) returns(ResponseDeleteUserDto);
+}
+
+message Empty{};
+
+
+message ResponseGetAllUser {
+    bool status = 1;
+    string message = 2;
+    Data data = 3;
+}
+
+message Data{
+    repeated User user = 1;
+}
+
+message User {
+    string role_id = 1;
+    string role_name = 2;
+    string name = 3;
+    string email = 4;
+    string lastAccess = 5;
+}
+
+message CreateUserDto {
+    string role_id = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message ResponseCreateUserDto {
+    bool status = 1;
+    string message = 2;
+}
+
+message UpdateUserDto {
+    string name = 1;
+}
+
+message ResponseUpdateUserDto {
+    bool status = 1;
+    string message = 2;
+}
+
+message DeleteUserDto {
+    string id = 1;
+}
+
+message ResponseDeleteUserDto {
+    bool status = 1;
+    string message = 2;
+}

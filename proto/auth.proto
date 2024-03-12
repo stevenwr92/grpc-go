@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./proto";
+
+
+service AddServiceAuth {
+    rpc Login(Request) returns (Response);
+}
+
+message Request {
+    string email = 1;
+    string password = 2;
+}
+
+
+message Response {
+    bool status = 1;
+    string message = 2;
+    Datas datas = 3;
+
+}
+
+message Datas {
+    string access_token = 1;
+}
