@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"net"
 
 	"golangtest.com/proto"
@@ -26,22 +27,43 @@ func main() {
 	}
 }
 
-// func (s *server) Add(_ context.Context, request *proto.Request) (*proto.Response, error) {
-// 	a, b := request.GetA(), request.GetB()
+func (s *server) Login(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
 
-// 	result := a + b
 
-// 	return &proto.Response{Result: result}, nil
-// }
+func (s *server) GetAllUser(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
 
-// func (s *server) Multiply(_ context.Context, request *proto.Request) (*proto.Response, error) {
-// 	a, b := request.GetA(), request.GetB()
 
-// 	result := a * b
+func (s *server) GetAllUser(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
+func (s *server) CreateUser(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
 
-// 	return &proto.Response{Result: result}, nil
-// }
 
-// func (s *server) Login(_ context.Context, request *proto.Request) (*proto.Response, error) {
-// 	email, password := request.
-// }
+func (s *server) UpdateUser(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
+
+
+func (s *server) DeleteUser(_ context.Context, request *proto.Request) (*proto.Response, error) {
+	
+	return request.
+	
+}
+
+
